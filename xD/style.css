@@ -1,0 +1,343 @@
+/* Animación de glitch */
+@keyframes glitch {
+    0% { transform: translate(0); }
+    10% { transform: translate(-5px, 5px); }
+    20% { transform: translate(-3px, -3px); }
+    30% { transform: translate(5px, 3px); }
+    40% { transform: translate(-5px, 5px); }
+    50% { transform: translate(3px, -3px); }
+    60% { transform: translate(-3px, 3px); }
+    70% { transform: translate(5px, -5px); }
+    80% { transform: translate(-3px, 3px); }
+    90% { transform: translate(3px, -3px); }
+    100% { transform: translate(0); }
+}
+
+/* Estilos para aplicar el efecto de glitch */
+.glitch-effect {
+    animation: glitch 0.5s ease-out;
+}
+
+/* Estilos para el enlace con la animación rainbow */
+a.yo {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    background-color: black;
+    animation: rainbow 5s infinite; /* La animación durará 5 segundos y se repetirá infinitamente */
+    border: 4px solid; /* Define un borde para que la animación del borde sea visible */
+    border-radius: 20px;
+    padding: 10px 20px;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 45%;
+    margin-top: 33%;
+}
+
+/* Estilos para el efecto de glitch al pasar el mouse */
+a.yo:hover {
+    animation: glitch 0.5s ease-out; /* Aplica el efecto de glitch al pasar el mouse */
+}
+
+/* Animación rainbow */
+@keyframes rainbow {
+    0% { color: red; border-color: red; }
+    14% { color: orange; border-color: orange; }
+    28% { color: yellow; border-color: yellow; }
+    42% { color: green; border-color: green; }
+    57% { color: blue; border-color: blue; }
+    71% { color: indigo; border-color: indigo; }
+    85% { color: violet; border-color: violet; }
+    100% { color: red; border-color: red; }
+}
+
+/*--------------------------------------------------------*/
+
+body {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    text-align: center;
+    animation: rainbow 5s infinite;
+}
+
+P {
+    color: white;
+}
+
+.inicio {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    background-color: black;
+    animation: rainbow 5s infinite;
+    border: 4px solid;
+    border-radius: 20px;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-right: 40%;
+}
+
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+/* Animación de cambio de color utilizando box-shadow */
+@keyframes changeColorBoxShadow {
+    0% { box-shadow: 0 0 10px 0px rgb(255, 0, 0); } /* Rojo */
+    20% { box-shadow: 0 0 10px 0px rgb(255, 165, 0); } /* Naranja */
+    40% { box-shadow: 0 0 10px 0px rgb(255, 255, 0); } /* Amarillo */
+    60% { box-shadow: 0 0 10px 0px rgb(0, 255, 0); } /* Verde */
+    80% { box-shadow: 0 0 10px 0px rgb(0, 0, 255); } /* Azul */
+    100% { box-shadow: 0 0 10px 0px rgb(128, 0, 128); } /* Púrpura */
+}
+
+
+/* Animación de cambio de color utilizando border-color */
+@keyframes changeColorBorderColor {
+    0% { border-color: red; }
+    14% { border-color: orange; }
+    28% { border-color: yellow; }
+    42% { border-color: green; }
+    57% { border-color: blue; }
+    71% { border-color: indigo; }
+    85% { border-color: violet; }
+    100% { border-color: red; }
+}
+
+
+.modal-content {
+    animation: changeColorBoxShadow 5s infinite, changeColorBorderColor 5s infinite;
+    position: relative;
+    background-color: #000000;
+    color: black;
+    margin: 10% auto; /* Ajustamos el margen para centrar el modal verticalmente */
+    padding: 1rem;
+    border: 5px solid #000000;
+    max-width: 40%; /* Cambiamos el ancho máximo */
+    max-height: 50%; /* Cambiamos la altura máxima */
+    overflow: auto; /* Agregamos desplazamiento si el contenido es demasiado grande */
+    border-radius: 10px;
+}
+
+.close {
+    color: #ffffff;
+    position: absolute; /* Cambiamos la posición a absoluta */
+    top: 2rem; /* Alineamos desde arriba */
+    right: 2rem; /* Alineamos desde la derecha */
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+
+
+.close:hover,
+.close:focus {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-imagen {
+    width: 50rem; /* Ancho deseado para la imagen */
+    height: 35rem; /* Altura deseada para la imagen */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.modal-imagen img {
+    width: 100%; /* Ajusta la imagen para que ocupe todo el contenedor */
+}
+
+
+.modal-texto {
+    overflow: hidden; /* Para evitar que el texto se desborde */
+    text-align: center;
+}
+
+.servicios-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem; /* Espacio entre los contenedores de los servicios */
+}
+
+/* Estilos para el contenedor de servicios */
+.servicies-box {
+    width: 20rem; /* Ancho deseado para cada servicio */
+    padding: 1rem;
+    border: 1px solid #daa90b; /* COLOR DE LOS CUADROS */
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 59rem;
+    margin-right: 3rem;
+    box-shadow: 0 0 10px 0px rgb(255, 165, 0);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Estilos para la animación cuando el mouse está sobre el contenedor */
+.servicies-box:hover {
+    animation: borderColorChange 3s infinite, boxShadowChange 3s infinite;
+}
+
+/* Animación para cambiar el color del borde */
+@keyframes borderColorChange {
+    0% { border-color: red; }
+    14% { border-color: orange; }
+    28% { border-color: yellow; }
+    42% { border-color: green; }
+    57% { border-color: blue; }
+    71% { border-color: indigo; }
+    85% { border-color: violet; }
+    100% { border-color: red; }
+}
+
+/* Animación para cambiar el color del box-shadow */
+@keyframes changeColorBoxShadow {
+    0% { box-shadow: 0 0 10px 0px rgb(255, 0, 0); } /* Rojo */
+    20% { box-shadow: 0 0 10px 0px rgb(255, 165, 0); } /* Naranja */
+    40% { box-shadow: 0 0 10px 0px rgb(255, 255, 0); } /* Amarillo */
+    60% { box-shadow: 0 0 10px 0px rgb(0, 255, 0); } /* Verde */
+    80% { box-shadow: 0 0 10px 0px rgb(0, 0, 255); } /* Azul */
+    100% { box-shadow: 0 0 10px 0px rgb(128, 0, 128); } /* Púrpura */
+}
+
+
+
+.servicies-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color:#00ff00 ;
+}
+
+.servicies-box p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.servicies-box .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid #00ff22;
+    border-radius: 0.5rem; /* Se mantiene en px porque no se puede convertir a rem */
+    background-color: #00ff22;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.servicies-box .btn:hover {
+    background-color: #00cc00;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.2rem 2.8rem;
+    border-radius: .6rem;
+    font-size: 1.6rem;
+    color: rgb(0, 255, 42);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    border: .2rem solid transparent;
+    transition: .5s ease;
+    background-color: #00ff22;
+    border-color: transparent;
+    box-shadow: 0 0 0 transparent; /* Agrega una sombra inicial transparente */
+}
+
+.btn:hover {
+    box-shadow: 0 0 10px 3px #00ff4c; /* Cambia la sombra a negro al pasar el cursor */
+}
+
+
+.btn:hover {
+    background: transparent;
+    color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+/* animacion de boton home - sobre nosotros - contactanos*/
+
+/* Estilos del botón */
+.btn-style {
+    margin-left: 9rem;
+    margin-top: 2rem;
+    display: inline-block;
+    padding: 1.2rem 2.8rem;
+    border-radius: .6rem;
+    font-size: 1.6rem;
+    color: rgb(0, 255, 42);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    border: .2rem solid transparent;
+    transition: .5s ease;
+    background-color: #00ff2296;
+    border-color: transparent;
+    box-shadow: 0 0 0 transparent; /* Agrega una sombra inicial transparente */
+    animation: changeColor 5s infinite; /* Aplica la animación */
+}
+
+/* Animación de cambio de color */
+@keyframes changeColor {
+    0% { 
+        border-color: rgb(255, 0, 0);
+        box-shadow: 0 0 10px 0px rgb(255, 0, 0);
+        color: rgb(255, 0, 0);
+    } /* Rojo */
+    20% { 
+        border-color: rgb(255, 165, 0);
+        box-shadow: 0 0 10px 0px rgb(255, 165, 0);
+        color: rgb(255, 165, 0);
+    } /* Naranja */
+    40% { 
+        border-color: rgb(255, 255, 0);
+        box-shadow: 0 0 10px 0px rgb(255, 255, 0);
+        color: rgb(255, 255, 0);
+    } /* Amarillo */
+    60% { 
+        border-color: rgb(0, 255, 0);
+        box-shadow: 0 0 10px 0px rgb(0, 255, 0);
+        color: rgb(0, 255, 0);
+    } /* Verde */
+    80% { 
+        border-color: rgb(0, 0, 255);
+        box-shadow: 0 0 10px 0px rgb(0, 0, 255);
+        color: rgb(0, 0, 255);
+    } /* Azul */
+    100% { 
+        border-color: rgb(128, 0, 128);
+        box-shadow: 0 0 10px 0px rgb(128, 0, 128);
+        color: rgb(128, 0, 128);
+    } /* Púrpura */
+}
+
+
+/* Estilos adicionales al pasar el cursor sobre el botón */
+.btn-style:hover {
+    background: transparent;
+    color: var(--main-color);
+    border-color: var(--main-color);
+    animation: none; /* Detiene la animación al pasar el cursor sobre el botón */
+}
